@@ -28,6 +28,52 @@
 #
 #Check windows update : affichage des dernieres MAJ avec leur statut d'installation
 
+<#PSScriptInfo
+
+.VERSION 1.0
+
+.AUTHOR greg@dfi.ch
+
+.COMPANYNAME
+
+.COPYRIGHT
+
+.TAGS
+
+.LICENSEURI
+
+.PROJECTURI
+
+.ICONURI
+
+.EXTERNALMODULEDEPENDENCIES
+
+.REQUIREDSCRIPTS
+
+.EXTERNALSCRIPTDEPENDENCIES
+
+.RELEASENOTES
+
+.PRIVATEDATA
+
+#>
+
+<#
+.DESCRIPTION
+ Le script va creer un rapport html dans lequel il fera les check suivants : 
+check commun : Version systeme, uptime, check des espaces disques et check de Windows defender (Windows > 2016) 
+check AD : Check des services AD, Check DCdiag (FR ou EN), Check DCdiag DNS (FR ou EN), check replication DC (si plusieurs DC) 
+          les checks Dcdiag creent également un fichier .txt pour afficher le test complet
+check ADconnect : affichage de la version de l'adconnect actuellement installe sur le serveur
+check du print server : affichage de la liste des imprimantes installees avec le nombre de travaux en attentes sur chaque imprimante
+check RDS : affichage de l'attribution des cal RDS (nombre et expiration)
+check backup VBR : check du repository, check des jobs, check de la licence
+check backup VBO : check du repository, check des jobs, check de la licence
+Check windows update : affichage des dernieres MAJ avec leur statut d'installation
+#>
+
+
+
 #CSS codes
 $header = @"
 <style>
